@@ -399,13 +399,13 @@
                         android:id="@+id/b_eql"
                         android:layout_width="210dp"
                         android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginStart="15dp"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="15dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginBottom="15dp"
-                        android:layout_gravity="center_horizontal"
                         android:background="#FF4081"
                         android:gravity="center"
                         android:text="="
@@ -429,7 +429,7 @@
                         android:text="Del"
                         android:textSize="24sp"
                         android:textStyle="bold"
-                        app:backgroundTint="#981313"/>
+                        app:backgroundTint="#981313" />
                 </LinearLayout>
 
             </LinearLayout>
