@@ -32,6 +32,7 @@
             android:background="#ffffff"
             android:gravity="bottom|end"
             android:text="@string/_0"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
             tools:ignore="NestedWeights" />
@@ -44,7 +45,9 @@
             android:fontFamily="@font/aldrich"
             android:gravity="center|end"
             android:text="@string/_0"
-            android:textSize="40sp" />
+            android:textColor="@color/black"
+            android:textSize="45sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
