@@ -44,7 +44,11 @@
             android:layout_weight="2"
             android:fontFamily="@font/aldrich"
             android:gravity="center|end"
+            android:isScrollContainer="true"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
             android:text="@string/_0"
+            android:autoSizeTextType="uniform"
             android:textColor="@color/black"
             android:textSize="45sp"
             android:textStyle="bold" />

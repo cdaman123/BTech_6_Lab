@@ -13,7 +13,9 @@ public class MainActivity extends AppCompatActivity {
     Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,bdot,badd,bsub,bmul,bdiv,bclr,bdel,beql,bbkt;
     TextView eqn, ans;
     String equatin;
-    int sign_flag = 0;
+    byte sign_flag = 0;
+    byte ans_flag = 0;
+    byte dot_flag = 0;
 
 
     @Override
@@ -169,55 +171,82 @@ public class MainActivity extends AppCompatActivity {
         bdot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (sign_flag == 0) {
-                    sign_flag = 1;
-                    equatin += '.';
-                    eqn.setText(equatin);
-                    ans.setText("0");
+                if(sign_flag == 0) {
+                    if (dot_flag == 0) {
+                        dot_flag = 1;
+                        sign_flag = 1;
+                        equatin += '.';
+                        eqn.setText(equatin);
+                        ans.setText("0");
+                    }
                 }
             }
         });
         badd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ans_flag == 1){
+                    ans_flag = 0;
+                    equatin = (String) ans.getText();
+                    dot_flag = 0;
+                }
                 if (sign_flag == 0) {
                     equatin += '+';
                     eqn.setText(equatin);
                     ans.setText("0");
                     sign_flag = 1;
+                    dot_flag = 0;
                 }
             }
         });
         bsub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ans_flag == 1){
+                    ans_flag = 0;
+                    equatin = (String) ans.getText();
+                    dot_flag = 0;
+                }
                 if (sign_flag == 0) {
                     sign_flag = 1;
                     equatin += '-';
                     eqn.setText(equatin);
                     ans.setText("0");
+                    dot_flag = 0;
                 }
             }
         });
         bmul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ans_flag == 1){
+                    ans_flag = 0;
+                    equatin = (String) ans.getText();
+                    dot_flag = 0;
+                }
                 if (sign_flag == 0) {
                     sign_flag = 1;
                     equatin += '*';
                     eqn.setText(equatin);
                     ans.setText("0");
+                    dot_flag = 0;
                 }
             }
         });
         bdiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ans_flag == 1){
+                    ans_flag = 0;
+                    equatin = (String) ans.getText();
+                    dot_flag = 0;
+                }
                 if (sign_flag == 0) {
                     sign_flag = 1;
                     equatin += '/';
                     eqn.setText(equatin);
                     ans.setText("0");
+                    dot_flag = 0;
                 }
             }
         });
@@ -228,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
                 eqn.setText(equatin);
                 ans.setText("0");
                 sign_flag = 0;
+                dot_flag = 0;
             }
         });
         bdel.setOnClickListener(new View.OnClickListener() {
@@ -248,6 +278,9 @@ public class MainActivity extends AppCompatActivity {
                     else{
                         sign_flag = 0;
                     }
+                    if(equatin.charAt(equatin.length()-1) == '.'){
+                        dot_flag = 0;
+                    }
                 }
                 else{
                     if (equatin.length()== 1){
@@ -255,6 +288,7 @@ public class MainActivity extends AppCompatActivity {
                         sign_flag = 0;
                         eqn.setText(equatin);
                         ans.setText("0");
+                        dot_flag = 0;
                     }
                 }
             }
@@ -266,10 +300,8 @@ public class MainActivity extends AppCompatActivity {
                     Expression expression = new ExpressionBuilder(equatin).build();
                     try {
                         double result = expression.evaluate();
-                        Double newData = Double.valueOf(result);
-                        double value = (double) newData.intValue();
-                        if (value == result){
-                            ans.setText(Integer.toString(newData.intValue()));
+                        if (Math.round(result) == result){
+                            ans.setText(Long.toString(Math.round(result)));
                         }
                         else {
                             ans.setText(Double.toString(result));
@@ -282,17 +314,26 @@ public class MainActivity extends AppCompatActivity {
                         equatin = "0";
                     }
                     sign_flag = 0;
+                    ans_flag = 1;
+                    dot_flag = 0;
+                    eqn.setText(equatin);
                 }
             }
         });
         bbkt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ans_flag == 1){
+                    ans_flag = 0;
+                    equatin = (String) ans.getText();
+                    dot_flag = 0;
+                }
                 if (sign_flag == 0) {
                     sign_flag = 1;
                     equatin += '^';
                     eqn.setText(equatin);
                     ans.setText("0");
+                    dot_flag = 0;
                 }
             }
         });
