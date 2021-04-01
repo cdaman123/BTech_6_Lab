@@ -2,6 +2,7 @@ package com.example.lab1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
                 res = n1+n2;
 
+                result.setTextColor(Color.GREEN);
+                result.setTextSize(20);
                 result.setText(Double.toString(res));
+
 
 
             }
