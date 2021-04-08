@@ -5,22 +5,26 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@drawable/btn"
     >
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/name"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold"/>
 
     <TextView
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/roll_no"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:id="@+id/rno"/>
     <TextView
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/marks"
