@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">GUI</string>
+    <string name="choose_color" >Choose Color</string>
+    <string name="choose_size" >Choose Size</string>
+    <string-array name="color_arr">
+        <item>Red</item>
+        <item>Black</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Cyan</item>
+        <item>Gray</item>
+        <item>Magenta</item>
+    </string-array>
+
+    <string-array name="Size_arr">
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+    </string-array>
+</resources>
