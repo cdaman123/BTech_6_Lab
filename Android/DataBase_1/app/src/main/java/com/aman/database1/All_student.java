@@ -1,4 +1,4 @@
-package com.aman.database;
+package com.aman.database1;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,19 +13,27 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
 
+public class All_student extends AppCompatActivity {
     ListView listView;
     String mName[] = {"Aman1","Aman2","Aman3","Aman4","Aman5","Aman6","Aman7","Aman8","Aman9","Aman10","Aman11","Aman12"};
     String nRNo[] = {"1","2","3","4","5","6","7","8","9","10","11","12"};
+
+    List<User> allUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_all_student);
+
+        UserDatabase udbn = UserDatabase.getDatabase(getApplicationContext());
 
         listView = findViewById(R.id.listviwe);
 
-        MyAdapter adapter = new MyAdapter(this,mName,nRNo);
+        allUser = udbn.userDao().getAll();
+
+        MyAdapter adapter = new MyAdapter(this,allUser);
 
         listView.setAdapter(adapter);
 
@@ -35,16 +43,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    class MyAdapter extends ArrayAdapter<String>{
+
+    class MyAdapter extends ArrayAdapter<User> {
         Context context;
         String rName[];
         String rRoll[];
 
-        MyAdapter(Context c, String name[], String RollNo[]){
-            super(c, R.layout.row, R.id.listviwe, name);
+        List<User> users;
+
+        MyAdapter(Context c, List<User> users){
+            super(c, R.layout.row, R.id.listviwe, users);
             this.context = c;
-            this.rName = name;
-            this.rRoll = RollNo;
+            this.users = users;
+            //this.rRoll = RollNo;
         }
 
         @NonNull
@@ -56,9 +67,11 @@ public class MainActivity extends AppCompatActivity {
             View row = layoutInflater.inflate(R.layout.row, parent,false);
             TextView tv1 = row.findViewById(R.id.name);
             TextView tv2 = row.findViewById(R.id.rno);
+            TextView tv3 = row.findViewById(R.id.marks);
 
-            tv1.setText(rName[position]);
-            tv2.setText(rRoll[position]);
+            tv1.setText(users.get(position).getName());
+            tv2.setText(users.get(position).getName());
+            tv3.setText(users.get(position).getRollNo());
 
 
 

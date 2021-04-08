@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DataBase</string>
+    <string name="roll_no">Roll No</string>
+    <string name="name">Name</string>
 </resources>
