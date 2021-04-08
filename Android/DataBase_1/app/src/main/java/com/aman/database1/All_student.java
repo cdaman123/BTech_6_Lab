@@ -17,8 +17,7 @@ import java.util.List;
 
 public class All_student extends AppCompatActivity {
     ListView listView;
-    String mName[] = {"Aman1","Aman2","Aman3","Aman4","Aman5","Aman6","Aman7","Aman8","Aman9","Aman10","Aman11","Aman12"};
-    String nRNo[] = {"1","2","3","4","5","6","7","8","9","10","11","12"};
+
 
     List<User> allUser;
 
@@ -36,10 +35,6 @@ public class All_student extends AppCompatActivity {
         MyAdapter adapter = new MyAdapter(this,allUser);
 
         listView.setAdapter(adapter);
-
-
-
-
 
     }
 
