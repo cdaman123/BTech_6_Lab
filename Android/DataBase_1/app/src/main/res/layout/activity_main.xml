@@ -12,7 +12,7 @@
 
 
     <EditText
-        android:id="@+id/et_roll"
+        android:id="@+id/et_rol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -24,7 +24,7 @@
         />
 
     <EditText
-        android:id="@+id/et_name"
+        android:id="@+id/et_nam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -36,7 +36,7 @@
         />
 
     <EditText
-        android:id="@+id/et_marks"
+        android:id="@+id/et_mark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"

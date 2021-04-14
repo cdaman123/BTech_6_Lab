@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
         btn_save = findViewById(R.id.btn_ins);
         btn_del = findViewById(R.id.btn_del);
         btn_delall = findViewById(R.id.btn_delall);
-        et_name = findViewById(R.id.et_name);
-        et_roll = findViewById(R.id.et_roll);
-        et_marks = findViewById(R.id.et_marks);
+        et_name = findViewById(R.id.et_nam);
+        et_roll = findViewById(R.id.et_rol);
+        et_marks = findViewById(R.id.et_mark);
 
         Intent intent  = new Intent(this, All_student.class);
         btn.setOnClickListener(new View.OnClickListener() {

@@ -65,8 +65,8 @@ public class All_student extends AppCompatActivity {
             TextView tv3 = row.findViewById(R.id.marks);
 
             tv1.setText(users.get(position).getName());
-            tv2.setText(users.get(position).getName());
-            tv3.setText(users.get(position).getRollNo());
+            tv2.setText(users.get(position).getRollNo());
+            tv3.setText(users.get(position).getMarks());
 
 
 
