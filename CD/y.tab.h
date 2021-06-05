@@ -46,13 +46,13 @@ extern int yydebug;
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     NUM = 258,
-     NEGATIVE = 259
+     NUMBER = 258,
+     UMINUS = 259
    };
 #endif
 /* Tokens.  */
-#define NUM 258
-#define NEGATIVE 259
+#define NUMBER 258
+#define UMINUS 259
 
 
 

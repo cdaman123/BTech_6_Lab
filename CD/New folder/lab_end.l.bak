@@ -1,0 +1,17 @@
+
+%{
+	#include<stdio.h>
+	#include<string.h>
+%}
+
+%%
+(a|b)*a(a|b)(a|b)  printf("---->Accepted");
+.* printf("----->  Not Accepted" );
+
+%%
+//int yywrap(void){}
+int main()
+{
+	yylex();
+	return 0;
+}
