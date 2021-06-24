@@ -37,5 +37,4 @@ while True:
             i=i+1
     except:
        print(k)
-       break
     print("The message received is :", m)
